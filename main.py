@@ -1,6 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, Form, Cookie, Response
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 import shutil
 import requests
 from PIL import Image
