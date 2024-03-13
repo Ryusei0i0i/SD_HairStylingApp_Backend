@@ -23,15 +23,12 @@ model = "modelname"
 # CORS設定
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[allow_domain],
+    allow_origins=[allow_origin],
     allow_credentials=True,
     allow_methods=["POST"],
-    allow_headers=["Content-Type","Cookie"],
+    allow_headers=["Content-Type"],
 )
 
-
-class PayloadType(BaseModel):
-    prompt: str
 
 class ControlnetRequest:
     def __init__(self, prompt, file):
