@@ -92,9 +92,7 @@ class ControlnetRequest:
 
 
 @app.post("/generate")
-async def img2img(file: UploadFile = File(...), text: str = Form(...), user_id: str = Cookie(None)):
-    print(user_id)
-    
+async def img2img(file: UploadFile = File(...), text: str = Form(...)):
     control_net = ControlnetRequest(text, file)
     control_net.build_body()
     output = control_net.send_request()
